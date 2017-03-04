@@ -1,4 +1,4 @@
-import bottle
+'kjimport bottle
 import os
 import random
 
@@ -33,13 +33,16 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-
+    
     # TODO: Do things with data
     directions = ['up', 'down', 'left', 'right']
+    
+
+	#GET TO DA CHOPPA
 
     return {
         'move': random.choice(directions),
-        'taunt': 'battlesnake-python!'
+        'taunt': 'LEEEERRROOOOOYYY MMMMJEEEENNNNNKKKINNNSSSS'
     }
 
 

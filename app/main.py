@@ -29,7 +29,7 @@ def start():
         'name': 'battlesnake-python'
     }
 
-# check the coordinates of 1 snake
+# print the coordinates of 1 snake
 @bottle.post('/print_coords')
 def print_coords(snake):
 	for coord in snake:

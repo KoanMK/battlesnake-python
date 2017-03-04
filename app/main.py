@@ -29,18 +29,11 @@ def start():
         'name': 'battlesnake-python'
     }
 
-# print the coordinates of 1 snake
-@bottle.post('/print_coords')
-def print_coords(snake):
-	for coord in snake:
-		print coord
-	
+# only change should be this comment
 	
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-    
-    print_coords(data['snake'])
 
     # TODO: Do things with data
     directions = ['up', 'down', 'left', 'right']

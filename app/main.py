@@ -2,6 +2,41 @@ import bottle
 import os
 import random
 
+def food_dist(snake, food):
+    dist_x = abs(snake[0] - food[0])
+    dist_y = abs(snake[1] - food[1])
+    return dist_x + dist_y;
+
+def closest_food(head, food):
+    min_dist = 2000
+    min_food = None
+    for food in eats:
+        dist = food_dist(head, food)
+        if dist < min_dist:
+            min_dist = dist
+            min_food = food
+    return min_food;
+
+def food_direction(head, food):
+    x = head[0] - food[0]
+    y = head[1] - food[1]
+    move = None
+    if x < 0:
+        move = 'right'
+    elif x > 0:
+        move = 'left'
+    if y < 0:
+    	move = 'down'
+    elif y > 0:
+    	move = 'up'
+    return move;
+
+def snek_head(data, id):
+    my_snake = None
+    for snek in data['snakes']:
+        if snek['id'] == id:
+            my_snake = snek['coords'][0]
+    return my_snake;
 
 @bottle.route('/static/<path:path>')
 def static(path):
@@ -23,10 +58,10 @@ def start():
     # TODO: Do things with data
 
     return {
-        'color': '#00FF00',
+        'color': '#FF0000',
         'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
         'head_url': head_url,
-        'name': 'battlesnake-python'
+        'name': 'Cobro'
     }
 
 
@@ -34,12 +69,16 @@ def start():
 def move():
     data = bottle.request.json
 
+    head = snek_head(data, data['you'])
+    fud = closest_food(head, data['food'])
+
+
     # TODO: Do things with data
     directions = ['up', 'down', 'left', 'right']
 
     return {
-        'move': random.choice(directions),
-        'taunt': 'battlesnake-python!'
+        'move': food_direction(head, fud),
+        'taunt': 'Boop the snoot'
     }
 
 

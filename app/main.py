@@ -30,18 +30,6 @@ def start():
     }
 
 
-@bottle.post('/move_2')
-def move_2(data):
-	head = data[coords[0]]
-	if head[0]==data['width'-1]
-		return 'down'
-	if head[1]==data['hieght'-1]
-		return 'left'
-	if head[0]==0
-		return 'up'
-	if head[1]==0
-		return 'right'
-	
 	
 @bottle.post('/move')
 def move():
@@ -52,7 +40,16 @@ def move():
 	if 
     return {
         #'move': random.choice(directions),
-        'move': move_2(data),
+        'move': 
+		head = data[coords[0]]
+	if head[0]==data['width'-1]
+		return 'down'
+	if head[1]==data['hieght'-1]
+		return 'left'
+	if head[0]==0
+		return 'up'
+	if head[1]==0
+		return 'right',
         'taunt': 'Boop the snoot'
     }
 

@@ -23,7 +23,7 @@ def start():
     # TODO: Do things with data
 
     return {
-        'color': '#00FF00',
+        'color': '#FF0000',
         'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
         'head_url': head_url,
         'name': 'battlesnake-python'
@@ -39,8 +39,8 @@ def move():
 
     return {
         #'move': random.choice(directions),
-        'move': 'left',
-        'taunt': 'battlesnake-python!'
+        'move': 'right',
+        'taunt': 'Boop the snoot'
     }
 
 

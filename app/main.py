@@ -29,10 +29,18 @@ def start():
         'name': 'battlesnake-python'
     }
 
-
+# check the coordinates of 1 snake
+@bottle.post('/print_coords')
+def print_coords(snake):
+	for coord in snake:
+		print coord
+	
+	
 @bottle.post('/move')
 def move():
     data = bottle.request.json
+    
+    print_coords(data['snake'])
 
     # TODO: Do things with data
     directions = ['up', 'down', 'left', 'right']
@@ -41,7 +49,7 @@ def move():
         #'move': random.choice(directions),
         'move': 'left',
         'taunt': 'battlesnake-python!'
-    }
+    }	
 
 
 # Expose WSGI app (so gunicorn can find it)

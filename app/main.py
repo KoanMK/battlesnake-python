@@ -29,7 +29,11 @@ def start():
         'name': 'battlesnake-python'
     }
 
+<<<<<<< HEAD
+# only change should be this comment
+=======
 
+>>>>>>> 00fd34bf52c449112f32569c5a63a10037d50019
 	
 @bottle.post('/move')
 def move():
@@ -49,6 +53,11 @@ def move():
 	if 
     return {
         #'move': random.choice(directions),
+<<<<<<< HEAD
+        'move': 'left',
+        'taunt': 'battlesnake-python!'
+    }	
+=======
         'move': 
 		head = data[coords[0]]
 	if head[0]==data['width'-1]
@@ -62,6 +71,7 @@ def move():
         'taunt': 'Boop the snoot'
 >>>>>>> 00fd34bf52c449112f32569c5a63a10037d50019
     }
+>>>>>>> 00fd34bf52c449112f32569c5a63a10037d50019
 
 
 # Expose WSGI app (so gunicorn can find it)

@@ -23,13 +23,17 @@ def start():
     # TODO: Do things with data
 
     return {
-        'color': '#00FF00',
+        'color': '#FF0000',
         'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
         'head_url': head_url,
         'name': 'battlesnake-python'
     }
 
+<<<<<<< HEAD
 # only change should be this comment
+=======
+
+>>>>>>> 00fd34bf52c449112f32569c5a63a10037d50019
 	
 @bottle.post('/move')
 def move():
@@ -37,12 +41,27 @@ def move():
 
     # TODO: Do things with data
     directions = ['up', 'down', 'left', 'right']
-
+	if 
     return {
         #'move': random.choice(directions),
+<<<<<<< HEAD
         'move': 'left',
         'taunt': 'battlesnake-python!'
     }	
+=======
+        'move': 
+		head = data[coords[0]]
+	if head[0]==data['width'-1]
+		return 'down'
+	if head[1]==data['hieght'-1]
+		return 'left'
+	if head[0]==0
+		return 'up'
+	if head[1]==0
+		return 'right',
+        'taunt': 'Boop the snoot'
+    }
+>>>>>>> 00fd34bf52c449112f32569c5a63a10037d50019
 
 
 # Expose WSGI app (so gunicorn can find it)

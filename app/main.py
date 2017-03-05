@@ -3,8 +3,7 @@ import os
 import random
 
 def food_dist(snake, food):
-    #dist_x = abs(snake[0] - food[0])
-    dist_x = abs(0 - food[0])
+    dist_x = abs(snake[0] - food[0])
     dist_y = abs(snake[1] - food[1])
     return dist_x + dist_y;
 
@@ -12,7 +11,7 @@ def closest_food(head, food):
     min_dist = 2000
     min_food = None
     for eats in food:
-        dist = food_dist(head, food)
+        dist = food_dist(head, eats)
         if dist < min_dist:
             min_dist = dist
             min_food = eats

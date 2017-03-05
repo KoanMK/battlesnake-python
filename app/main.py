@@ -17,21 +17,21 @@ def closest_food(head, food):
             min_food = eats
     return min_food;
 
-def food_direction(head, food):
+def food_direction(head, food, data):
     x = head[0] - food[0]
     y = head[1] - food[1]
     move = None
     if x < 0:
-        if checkDanger(find_cord('right', head)):
+        if checkDanger(find_cord('right', head), data):
             move = 'right'
     elif x > 0:
-        if checkDanger(find_cord('left', head)):
+        if checkDanger(find_cord('left', head), data):
             move = 'left'
     if y < 0:
-        if checkDanger(find_cord('down', head)):
+        if checkDanger(find_cord('down', head), data):
     	    move = 'down'
     elif y > 0:
-        if checkDanger(find_cord('up', head)):
+        if checkDanger(find_cord('up', head), data):
     	    move = 'up'
     return move;
 
@@ -42,7 +42,7 @@ def snek_head(data, id):
             my_snake = snek['coords'][0]
     return my_snake;
 
-def checkDanger(block):
+def checkDanger(block, data):
     x = False;
     for danger in data['snakes']:
         for i in len(danger['coords'])-1:
@@ -101,7 +101,7 @@ def move():
     directions = ['up', 'down', 'left', 'right']
 
     return {
-        'move': food_direction(head, fud),
+        'move': food_direction(head, fud, data),
         #'move': random.choice(directions),
         'taunt': 'Boop the snoot'
     }

@@ -10,11 +10,11 @@ def food_dist(snake, food):
 def closest_food(head, food):
     min_dist = 2000
     min_food = None
-    for food in eats:
+    for eats in food:
         dist = food_dist(head, food)
         if dist < min_dist:
             min_dist = dist
-            min_food = food
+            min_food = eats
     return min_food;
 
 def food_direction(head, food):

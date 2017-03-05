@@ -22,13 +22,17 @@ def food_direction(head, food):
     y = head[1] - food[1]
     move = None
     if x < 0:
-        move = 'right'
+        if checkDanger(find_cord('right', head)):
+            move = 'right'
     elif x > 0:
-        move = 'left'
+        if checkDanger(find_cord('left', head)):
+            move = 'left'
     if y < 0:
-    	move = 'down'
+        if checkDanger(find_cord('down', head)):
+    	    move = 'down'
     elif y > 0:
-    	move = 'up'
+        if checkDanger(find_cord('up', head)):
+    	    move = 'up'
     return move;
 
 def snek_head(data, id):
@@ -37,6 +41,26 @@ def snek_head(data, id):
         if snek['id'] == id:
             my_snake = snek['coords'][0]
     return my_snake;
+
+def checkDanger(block):
+    x = False;
+    for danger in data['snakes']:
+        for i in len(danger['coords'])-1:
+            if danger['coords'][i] == block:
+                x = True
+    return x;
+
+def find_cord(str, head):
+    cord = head
+    if str is 'up':
+        cord[1]-1
+    if str is 'down':
+        cord[1]+1
+    if str is 'left':
+        cord[0]-1
+    if str is 'right':
+        cord[0]+1
+    return cord;
 
 @bottle.route('/static/<path:path>')
 def static(path):

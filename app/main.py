@@ -78,7 +78,7 @@ def move():
 
     return {
         #'move': food_direction(head, fud),
-        'move': directions.random.choice(directions),
+        'move': random.choice(directions),
         'taunt': 'Boop the snoot'
     }
 

@@ -46,7 +46,7 @@ def checkDanger(block, data):
     x = False
     for snake in data['snakes']:
         for coord in snake['coords']:
-            if coord == block:
+            if coord is block:
                 x = True
     return x;
 

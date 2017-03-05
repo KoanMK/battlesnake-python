@@ -22,16 +22,16 @@ def food_direction(head, food, data):
     y = head[1] - food[1]
     move = None
     if x < 0:
-        if not(checkDanger(find_cord('right', head), data)):
+        if checkDanger(find_cord('right', head), data):
             move = 'right'
     elif x > 0:
-        if not(checkDanger(find_cord('left', head), data)):
+        if checkDanger(find_cord('left', head), data):
             move = 'left'
     if y < 0:
-        if not(checkDanger(find_cord('down', head), data)):
+        if checkDanger(find_cord('down', head), data):
     	    move = 'down'
     elif y > 0:
-        if not(checkDanger(find_cord('up', head), data)):
+        if checkDanger(find_cord('up', head), data):
     	    move = 'up'
     return move;
 

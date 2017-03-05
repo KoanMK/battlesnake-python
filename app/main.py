@@ -20,12 +20,12 @@ def closest_food(head, food):
 def food_direction(head, food, data):
     x = head[0] - food[0]
     y = head[1] - food[1]
-    move = None
+    move = left
     if x < 0:
-        if checkDanger(find_cord('right', head), data):
+        if not checkDanger(find_cord('right', head), data):
             move = 'right'
     elif x > 0:
-        if checkDanger(find_cord('left', head), data):
+        if not checkDanger(find_cord('left', head), data):
             move = 'left'
     if y < 0:
         if checkDanger(find_cord('down', head), data):

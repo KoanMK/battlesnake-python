@@ -43,7 +43,7 @@ def snek_head(data, id):
     return my_snake;
 
 def checkDanger(block, data):
-    x = False;
+    x = False
     for snake in data['snakes']:
         for coord in snake['coords']:
             if coord == block:

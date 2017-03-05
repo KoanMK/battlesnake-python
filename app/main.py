@@ -3,7 +3,8 @@ import os
 import random
 
 def food_dist(snake, food):
-    dist_x = abs(snake[0] - food[0])
+    #dist_x = abs(snake[0] - food[0])
+    dist_x = abs(0 - food[0])
     dist_y = abs(snake[1] - food[1])
     return dist_x + dist_y;
 

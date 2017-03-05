@@ -47,7 +47,7 @@ def checkDanger(block, data):
     for danger in data['snakes']:
         counter = 0
         for snake in danger['coords']:
-            if danger['coords'][counter] == block:
+            if snake[counter] == block:
                 x = True
             counter = counter + 1
     return x;

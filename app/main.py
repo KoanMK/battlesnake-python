@@ -45,9 +45,11 @@ def snek_head(data, id):
 def checkDanger(block, data):
     x = False;
     for danger in data['snakes']:
-        for i in len(danger['coords'])-1:
-            if danger['coords'][i] == block:
+        counter = 0
+        for snake in danger['coords']-1:
+            if danger['coords'][counter] == block:
                 x = True
+            counter = counter + 1
     return x;
 
 def find_cord(str, head):
